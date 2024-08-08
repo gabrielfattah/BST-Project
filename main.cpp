@@ -2,10 +2,65 @@
 //
 
 #include <iostream>
+#include "Node.h"
+#include "BST.h"
+#define SPACE 10
+
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    BST obj; //BST object of Class BST created
+    int option, val; 
+
+    do 
+    {
+        cout << "What operation do you want to perform ? " << endl;
+        cout << "Select option number . Enter 0 to exit" << endl;
+        cout << "1. Insert Node" << endl;
+        cout << "2. Search Node" << endl;
+        cout << "3. Delete Node" << endl;
+        cout << "4. Print BST Values" << endl;
+        cout << "5. Clear Screen" << endl;
+        cout << "0. Exit Program" << endl;
+
+        cin >> option;
+
+        TreeNode *new_node = new TreeNode(); //memory allocated for TreeNode object on heap 
+
+        switch (option) 
+        {
+        case 0:
+             break;
+        case 1: 
+             cout << "INSERT" << endl;
+             cout << "Insert the key of Tree Node to insert in BST" << endl;
+             cin >> val;
+             new_node-> key = val;
+             obj.insertNode(new_node);
+             cout << endl;
+             break;
+        case 2:
+            cout << "SEARCH" << endl;
+            break;
+        case 3:
+            cout << "DELETE" << endl;
+            break;
+        case 4:
+            cout << "PRINT and TRAVERSE" << endl;
+            obj.print2D(obj.root, 5);
+            break;
+        case 5:
+            system("cls");
+            break;
+        default:
+            cout << "Your option does not exist , Enter a proper number ! " << endl;
+        }
+
+    } 
+    while (option != 0);
+
+    return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
