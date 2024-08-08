@@ -69,4 +69,18 @@ public:
 		cout << r->key << "\n"; // 6
 		print2D(r->left, space); // Process left child  7
 	}
+
+	void printPreOrder(TreeNode* r) { //Root, Left, Right 
+		if (r == NULL)
+			return;
+		else {
+			cout << r->key << " ";
+			/*first print data of node*/
+			printPreOrder(r->left);
+			/*then recur on left subtree*/
+			printPreOrder(r->right);
+			/*now recur on right subtree*/
+		}
+		    
+	}
 };

@@ -49,6 +49,9 @@ int main()
         case 4:
             cout << "PRINT and TRAVERSE" << endl;
             obj.print2D(obj.root, 5);
+            cout << "Pre-order Traversal Print : ";
+            obj.printPreOrder(obj.root);
+            cout << endl;
             break;
         case 5:
             system("cls");
