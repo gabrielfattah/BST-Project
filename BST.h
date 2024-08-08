@@ -83,4 +83,14 @@ public:
 		}
 		    
 	}
+
+	void printInOrder(TreeNode* r) {
+		if (r == NULL)
+			return;
+		else {
+			printInOrder(r->left);
+			cout << r->key << " ";
+			printInOrder(r->right);
+		}
+	}
 };

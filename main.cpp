@@ -49,8 +49,11 @@ int main()
         case 4:
             cout << "PRINT and TRAVERSE" << endl;
             obj.print2D(obj.root, 5);
-            cout << "Pre-order Traversal Print : ";
+            cout << "Pre-order Tree Traversal Technique : ";
             obj.printPreOrder(obj.root);
+            cout << endl;
+            cout << "In-order Tree Traversal Technique : ";
+            obj.printInOrder(obj.root);
             cout << endl;
             break;
         case 5:
