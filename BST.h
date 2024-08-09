@@ -107,4 +107,25 @@ public:
 			cout << r->key << " ";
 		}
 	}
+
+	TreeNode* SearchNode(int val) {
+		if (root == NULL) {
+			return  root;
+		}
+		else {
+			TreeNode* temp = root;
+			while (temp != 0) {
+				if (val == temp->key) {
+					return temp;
+				}
+				else if (val < temp->key) {
+					temp = temp->left;
+				}
+				else {
+					temp = temp->right;
+				}
+			}
+			return NULL;
+		}
+	}
 };

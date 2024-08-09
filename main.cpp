@@ -40,7 +40,15 @@ int main()
              cout << endl;
              break;
         case 2:
-            cout << "SEARCH" << endl;
+            cout << "Insert the key you want to find !" << endl;
+            cin >> val;
+            new_node = obj.SearchNode(val);
+            if (new_node != NULL) {
+                cout << " HOORAY , Value found :)" << endl << endl;
+            }
+            else {
+                cout << " Sorry :( , Value was not found" << endl << endl;
+            }
             break;
         case 3:
             cout << "DELETE" << endl;
