@@ -58,16 +58,20 @@ public:
 		}
 	}
 	
-	void print2D(TreeNode* r, int space) {
-		if (r == NULL) // Base case  1
+	void print2D(TreeNode* r, int space) { //Printing BST in a Graphical Way
+		if (r == NULL) {
 			return;
-		space += SPACE; // Increase distance between levels   2
-		print2D(r->right, space); // Process right child first 3 
-		cout << endl;
-		for (int i = SPACE; i < space; i++) // 5 
-			cout << " "; // 5.1  
-		cout << r->key << "\n"; // 6
-		print2D(r->left, space); // Process left child  7
+		}
+		else {
+			space += SPACE;
+			print2D(r->right, space);
+			cout << endl;
+			for (int i = SPACE; i < space; i++) {
+				cout << " ";
+			}
+			cout << r->key << "\n";
+			print2D(r->left, space);
+		}
 	}
 
 	void printPreOrder(TreeNode* r) { //Root, Left, Right 
