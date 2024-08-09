@@ -93,4 +93,14 @@ public:
 			printInOrder(r->right);
 		}
 	}
+
+	void printPostOrder(TreeNode* r) {
+		if (r == NULL)
+			return;
+		else {
+			printPostOrder(r->left);
+			printPostOrder(r->right);
+			cout << r->key << " ";
+		}
+	}
 };

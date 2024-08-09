@@ -33,7 +33,6 @@ int main()
         case 0:
              break;
         case 1: 
-             cout << "INSERT" << endl;
              cout << "Insert the key of Tree Node to insert in BST" << endl;
              cin >> val;
              new_node-> key = val;
@@ -55,6 +54,9 @@ int main()
             cout << "In-order Tree Traversal Technique : ";
             obj.printInOrder(obj.root);
             cout << endl;
+            cout << "Post-order Tree Traversal Technique : ";
+            obj.printPostOrder(obj.root);
+            cout << endl << endl;
             break;
         case 5:
             system("cls");
