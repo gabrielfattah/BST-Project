@@ -51,7 +51,16 @@ int main()
             }
             break;
         case 3:
-            cout << "DELETE" << endl;
+            cout << "Insert the key you want to delete !" << endl;
+            cin >> val;
+            new_node = obj.SearchNode(val);
+            if (new_node != NULL) {
+                obj.deleteNode(obj.root, val);
+                cout << "Value deleted!" << endl;
+            }
+            else {
+                cout << "Value not found :(" << endl;
+            }
             break;
         case 4:
             cout << "PRINT and TRAVERSE" << endl;

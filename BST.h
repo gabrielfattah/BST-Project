@@ -128,4 +128,54 @@ public:
 			return NULL;
 		}
 	}
+
+	TreeNode* minValueNode(TreeNode* node) { //Finding smallest node on right subtree
+
+		TreeNode* current = node;
+		/*Loop down to find the leftmost leaf*/
+		while (current->left != NULL) {
+			current = current->left;
+		}
+		return current;
+	}
+
+	TreeNode* deleteNode(TreeNode* r, int v) {
+		// base condition 
+		if (r == NULL) {
+			return r; 
+		}
+		//if key to be deleted is smaller than the root's key, 
+		//then it lies in the left subtree
+		else if (v < r -> key) {
+			r->left = deleteNode(r->left, v);
+		}
+		//if the key to be deleted is greater than the root's key,
+		//then it lies in the right subtree 
+		else if (v > r->key) {
+			r->right = deleteNode(r->right, v);
+		}
+		//if key is same as root's key , then this is the node to be deleted
+		else {
+			//node with only one child or no child
+			if (r->left == NULL) {
+				TreeNode* temp = r->right;
+				delete r;
+				return temp;
+			}
+			else if (r->right == NULL) {
+				TreeNode* temp = r->left;
+				delete r;
+				return temp;
+			}
+			else {
+				//node with two children 
+				TreeNode* temp = minValueNode(r->right);
+				r->key = temp->key;
+				r->right = deleteNode(r->right, temp->key);
+			}
+		}
+		return r;
+	}
+
+
 };
